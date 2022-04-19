@@ -6,8 +6,15 @@ var cors = require('cors');
 connection();
 const app = express();
 
+// parse application/json
+app.use(express.json())
+
+app.use(cors())
+
 // PORT DECLARATION
 const PORT = process.env.PORT || 8000;
+
+app.use('/api/auth', require('./routes/auth'))
 
 // HOSTING PURPOSES
 if (process.env.NODE_ENV == "production"){
