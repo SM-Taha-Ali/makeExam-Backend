@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
-const PastpapersKBSchema = new Schema({
+const PastpapersFBSchema = new Schema({
     year: {
         type: String,
         required: true
@@ -32,8 +32,8 @@ const PastpapersKBSchema = new Schema({
     }
 });
 
-const PastpapersKB = mongoose.model('PastpapersKB', PastpapersKBSchema)
+const PastpapersFB = mongoose.model('PastpapersFB', PastpapersFBSchema)
 
-PastpapersKB.createIndexes();
+PastpapersFB.createIndexes();
 
-module.exports = PastpapersKB;
+module.exports = PastpapersFB;

@@ -1,12 +1,14 @@
 const mongoose = require('mongoose');
-const { Schema } = mongoose;
+const {Schema} = mongoose;
 
-const PastpapersKBSchema = new Schema({
-    year: {
-        type: String,
-        required: true
+const PastPapersCBSchema = new Schema({
+
+    year : {
+        type : String,
+        required : true
     },
-    section: {
+
+    section : {
         type: String,
         required: true
     },
@@ -22,6 +24,11 @@ const PastpapersKBSchema = new Schema({
         type: Array,
         default: []
     },
+    source : {
+        type : String,
+        required : true 
+    },
+
     paperType: {
         type: String,
         required: true
@@ -30,10 +37,22 @@ const PastpapersKBSchema = new Schema({
         type: String,
         required: true
     }
+
 });
 
-const PastpapersKB = mongoose.model('PastpapersKB', PastpapersKBSchema)
+    const PastpapersCB = mongoose.model("PastPapersCB",PastPapersCBSchema)
+    PastpapersCB.createIndexes();
+    
+    module.exports = PastpapersCB
+    
 
-PastpapersKB.createIndexes();
 
-module.exports = PastpapersKB;
+
+
+
+
+
+
+
+
+

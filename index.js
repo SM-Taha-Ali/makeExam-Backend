@@ -15,7 +15,10 @@ app.use(cors())
 const PORT = process.env.PORT || 8000;
 
 app.use('/api/auth', require('./routes/auth'))
-app.use('/api/pastPaper', require('./routes/pastpapersKB.js'))
+app.use('/api/pastPaperkb', require('./routes/pastpapersKB.js'))
+app.use('/api/pastPapercb', require('./routes/pastpapersCB.js'))
+app.use('/api/pastPaperfb', require('./routes/pastpapersFB.js'))
+app.use('/api/questionBank', require('./routes/questionbank.js'))
 
 // HOSTING PURPOSES
 if (process.env.NODE_ENV == "production"){
