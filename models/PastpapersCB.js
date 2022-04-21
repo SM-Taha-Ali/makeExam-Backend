@@ -36,6 +36,14 @@ const PastPapersCBSchema = new Schema({
     subject: {
         type: String,
         required: true
+    },
+    qno: {
+        type: String,
+        required: true
+    },
+    board: {
+        type: String,
+        required: true
     }
 
 });

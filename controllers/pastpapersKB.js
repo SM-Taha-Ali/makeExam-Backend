@@ -14,7 +14,11 @@ async function createPaper(req, res) {
             question: req.body.question,
             subParts: req.body.subParts,
             paperType: req.body.paperType,
-            subject: req.body.subject
+            subject: req.body.subject,
+            qno: req.body.qno,
+            board: req.body.board,
+        }).catch((error)=>{
+            return res.status(400).send(error)
         });
         res.json(paper);
     }
