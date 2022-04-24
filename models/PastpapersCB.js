@@ -44,6 +44,10 @@ const PastPapersCBSchema = new Schema({
     board: {
         type: String,
         required: true
+    },
+    isSection: {
+        type: Boolean,
+        default: false
     }
 
 });

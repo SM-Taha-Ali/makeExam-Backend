@@ -1,20 +1,20 @@
-const questionbank =  require("../models/Questionbank.js")
+const QuestionBank =  require("../models/Questionbank.js")
 
 async function writePaper(req,res){
 
     let success = false
     try {
-
-        let paper = await PastpapersCB.create({
-        
-        questionNo: req.body.questionNo,
+        let paper = await QuestionBank.create({
+        user: req.user.id,
+        qno: req.body.qno,
         question: req.body.question,
         subParts: req.body.subParts,
         paperType: req.body.paperType,
-        subject: req.body.subject
+        subject: req.body.subject,
+        section: req.body.section,
+        marks: req.body.marks
       });
         res.json(paper);
-
     }
 
     catch (error) {
@@ -25,7 +25,7 @@ async function writePaper(req,res){
 
 async function getPaper(req, res) {
     try {
-        const paper = await PastpapersCB.find();
+        const paper = await QuestionBank.find({ user: req.user.id });
         res.json(paper);
     }
     catch (error) {
